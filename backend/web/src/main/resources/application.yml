@@ -1,0 +1,18 @@
+
+spring:
+    datasource:
+        url: jdbc:h2:mem:testdb;
+        driverClassName: org.h2.Driver
+        username: sa
+        password:
+    mvc:
+        view:
+            prefix: / 
+            suffix: .html
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+        hibernate:
+            ddl-auto: update
+server:
+    port: 9000
+ 

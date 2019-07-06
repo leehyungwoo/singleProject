@@ -1,0 +1,13 @@
+DROP TABLE IF EXISTS userinfo;
+
+CREATE TABLE userinfo(
+    id int AUTO_INCREMENT PRIMARY KEY,
+    mid  VARCHAR(30) UNIQUE NOT NULL,
+    mpassword VARCHAR(30) NOT NULL,
+    mname VARCHAR(30) NOT NULL,
+    memail VARCHAR(30) NOT NULL,
+    mphone VARCHAR(30) NOT NULL,
+    mgender VARCHAR(30) NOT NULL
+)DEFAULT CHARSET=utf8;
+
+commit;
