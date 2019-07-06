@@ -105,7 +105,7 @@ export default {
     data(){
         return{
              hostname:'http://localhost:9000/userinfo',
-             id:1,
+             id:null,
              mid:"",
              mpassword:"",
              mname:"",
@@ -116,10 +116,8 @@ export default {
     },
     created() {
         let user = localStorage.getItem('user');
-        console.log(user)
         axios.get(`${this.hostname}/mypage/${user}`)
-        .then(res=>{
-           
+        .then(res=>{    
             this.id=res.data.id;
             this.mid=res.data.mid;
             this.mpassword=res.data.mpassword;
@@ -140,7 +138,6 @@ export default {
     },
     methods:{
         updateBtn(){
-
                var data = {  
                     id:this.id,
                     mid:this.mid,
@@ -170,7 +167,12 @@ export default {
                 }
                 axios.delete(`${this.hostname}/delete/${this.id}`)
                 .then(r=>{
-                    alert(r)
+                    if(r.data.result === "sucess"){
+                        alert("삭제성공")
+                        this.$store.state.userInfo.userId='';
+                        this.$store.state.userInfo.logintf=false;
+                        this.$router.push({path:'/'})      
+                    }
                 }).catch(e=>{
                     alert(e)
                 })

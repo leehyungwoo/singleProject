@@ -32,11 +32,9 @@ export default {
     created(){
         var user = localStorage.getItem("user");
         this.userInfo = this.$store.state.userInfo;
-        console.log(this.userInfo)
     },
     methods:{
         logout(){
-            console.log('로그아웃')
             this.$store.state.userInfo.logintf=false;
             this.$store.state.userInfo.userId="";
             localStorage.removeItem("user");

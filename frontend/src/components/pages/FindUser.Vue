@@ -87,7 +87,6 @@ export default {
                     "Content-Type":"application/json",
                     "Authorization":"JWT fefege.."
                 }
-
                 axios.post(`${this.hostname}/find`,
                 JSON.stringify(data),
                 {headers:headers}

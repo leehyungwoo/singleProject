@@ -40,7 +40,7 @@
                             name="mpassword">
                         </div>
                         <button @click="login()" class="btn btn-default">Login</button>
-                        <!-- <router-link to="find-user" class="btn btn-default">FindUser</router-link> -->
+                        <router-link to="find-user" class="btn btn-default">FindUser</router-link>
                     </div>
                 </div>
             </div>

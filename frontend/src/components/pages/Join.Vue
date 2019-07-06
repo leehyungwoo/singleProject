@@ -148,14 +148,12 @@ export default {
         confirm(){
             axios.get(`${this.hostname}/join/confirm/${this.mid}`)
             .then(r=>{
-                console.log(r.data.result)
                 if(r.data.result == true){
                         this.idConfirm = true;
                 }else{
                         this.idConfirm = false;
                 }
-                    alert(r.data.msg)
-                console.log(this.idConfirm)
+                alert(r.data.msg)
             }).catch(e=>{
                 alert('에러')
             })

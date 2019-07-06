@@ -15,9 +15,7 @@ public interface UserInfoRepository extends CrudRepository<UserInfo, Long>{
     public UserInfo findByMidAndMpassword(String mId, String mPassword);
     public UserInfo findByMidAndMemail(String mId, String memail);
     public UserInfo findByMid(String mId);
-
-  
-                 
+           
     // @Modifying	// update , delete Query시 @Modifying 어노테이션을 추가
 	// @Query(value="UPDATE userinfo u SET u.name = :name WHERE u.no = :no", nativeQuery=false)
 	// Integer update(@Param("name") UserInfoDTO name);           
